@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  gpush:
+    cmds:
+      - pwd
+      - git add .
+      - git commit -m "test taskfile cmds"
+      - git push
