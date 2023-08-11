@@ -5,5 +5,5 @@ tasks:
     cmds:
       - pwd
       - git add .
-      - git commit -m "test taskfile cmds"
+      - git commit -m "test taskfile cmds in github's codespace."
       - git push
