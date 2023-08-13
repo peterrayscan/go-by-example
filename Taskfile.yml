@@ -1,9 +1,17 @@
 version: '3'
 
+env:
+  DEFAULT_COMMIT_MESSAGE: "quick commit, no new description, see the previous commit message."
+
 tasks:
-  gpush:
+  push:
     cmds:
       - pwd
       - git add .
-      - git commit -m "test taskfile cmds in github's codespace."
+      - |
+        if [ "{{.M}}" == "" ]; then
+          git commit -m "{{.DEFAULT_COMMIT_MESSAGE}}"
+        else
+          git commit -m "{{.m}}"
+        fi
       - git push
