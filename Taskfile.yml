@@ -9,7 +9,7 @@ tasks:
       - pwd
       - git add .
       - |
-        if [ "{{.M}}" == "" ]; then
+        if [ "{{.m}}" == "" ]; then
           git commit -m "{{.DEFAULT_COMMIT_MESSAGE}}"
         else
           git commit -m "{{.m}}"
