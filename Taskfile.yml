@@ -18,6 +18,6 @@ tasks:
           git commit -m "${message}"
         fi
       - |
-        # git push
+        git push
         echo -e "\n---git push is done.---\n"
 
