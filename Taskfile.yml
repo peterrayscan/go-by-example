@@ -11,10 +11,10 @@ tasks:
       - |
         echo -n "[commit message]: "
         read message
-        if [ "{{.message}}" == "" ]; then
+        if [ "${message}" == "" ]; then
           git commit -m "{{.DEFAULT_COMMIT_MESSAGE}}"
         else
-          git commit -m "{{.message}}"
+          git commit -m "${message}"
         fi
       - |
         # git push
