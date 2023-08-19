@@ -11,6 +11,7 @@ tasks:
       - |
         echo -n "[commit message]: "
         read message
+        echo ""
         if [ "${message}" == "" ]; then
           git commit -m "{{.DEFAULT_COMMIT_MESSAGE}}"
         else
