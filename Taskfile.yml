@@ -9,9 +9,15 @@ tasks:
       - pwd
       - git add .
       - |
-        if [ "{{.m}}" == "" ]; then
+        echo -n "[commit message]: "
+        read message
+        echo ""
+        if [ "{{.message}}" == "" ]; then
           git commit -m "{{.DEFAULT_COMMIT_MESSAGE}}"
         else
-          git commit -m "{{.m}}"
+          git commit -m "{{.message}}"
         fi
-      - git push
+      - |
+        git push
+        echo -n "\ngit push is done.\n"
+
