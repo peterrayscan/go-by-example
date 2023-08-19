@@ -19,5 +19,5 @@ tasks:
         fi
       - |
         git push
-        echo -n "\ngit push is done.\n"
+        echo -e "\ngit push is done.\n"
 
