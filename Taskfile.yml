@@ -10,8 +10,6 @@ tasks:
         read message
         echo ""
 
-        echo "a${message}b"
-
         if [ ${message} ]; then
           git commit -m "quick commit, no new description, see the previous commit message."
         else
