@@ -4,6 +4,7 @@ tasks:
   push:
     cmds:
       - pwd
+      - git pull
       - git add .
       - |
         echo -n "[commit message]: "
