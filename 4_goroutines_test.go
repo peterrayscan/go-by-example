@@ -27,6 +27,6 @@ func Test_goroutines(t *testing.T) {
 		go doSth()
 	}
 
-	// wait until all goroutines is done
+	// wait until all goroutines are done.
 	time.Sleep(2 * time.Second)
 }
