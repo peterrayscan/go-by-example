@@ -6,16 +6,14 @@ tasks:
       - pwd
       - git add .
       - |
-        echo -n "[commit message]: "
+        echo -n "[Commit message]: "
         read message
-        echo ""
-
-        if [ ${message} ]; then
+        if [[ -n "$message" ]] || [[ -z "$message" ]]; then
           git commit -m "quick commit, no new description, see the previous commit message."
-        elif [ -z "${message}" ]; then
+        elif [[ -z "$message" ]]; then
           git commit -m "quick commit, no new description, see the previous commit message."
         else
-          git commit -m "${message}"
+          git commit -m "$message"
         fi
       - |
         git push
