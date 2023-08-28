@@ -17,7 +17,7 @@ func Test_timer(t *testing.T) {
 		fmt.Println("timer2 is fired.")
 	}()
 
-	// in some conditiion, you may want to stop the timer before it fired.
+	// in some condition, you may want to stop the timer before it fired.
 	if true {
 		success := timer2.Stop()
 		if success {

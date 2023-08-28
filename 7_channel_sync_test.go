@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func work(ch chan bool) {
+func sync(ch chan bool) {
 	fmt.Println("working...")
 	time.Sleep(1 * time.Second)
 	fmt.Println("done.")
@@ -15,7 +15,7 @@ func work(ch chan bool) {
 
 func Test_channel_sync(t *testing.T) {
 	do := make(chan bool)
-	go work(do)
+	go sync(do)
 	<-do
 	fmt.Println("work has been finished.")
 }
