@@ -10,7 +10,9 @@ func worker(id int, jobs <-chan int, results chan<- string) {
 	for jobID := range jobs {
 		fmt.Println("worker:", id, "start job:", jobID)
 		time.Sleep(1 * time.Second)
-		results <- fmt.Sprintf("worker: %d finished job: %d", id, jobID)
+		result := fmt.Sprintf("worker: %d finished job: %d", id, jobID)
+		fmt.Println(result)
+		results <- result
 	}
 }
 
@@ -29,10 +31,7 @@ func Test_work_pool(t *testing.T) {
 	}
 	close(jobs)
 
-	// for result := range results {
-	// 	fmt.Println(result)
-	// }
 	for a := 1; a <= jobNum; a++ {
-		fmt.Println(<-results)
+		<-results
 	}
 }
